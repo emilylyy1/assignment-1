@@ -8,8 +8,8 @@
 :root{
     /* basic 2-bit palette from 1bit Monitor Glow Palette by Polyducks */
     /* https://lospec.com/palette-list/1bit-monitor-glow */
-    --colour-1: #222323;
-    --colour-2: #f0f6f0;
+    --colour-1: #101820;
+    --colour-2: #8a8afb;
 }
 
 /* this swaps the colour order to account for user's OS dark mode */
@@ -63,6 +63,10 @@ main {
 
 section {
     max-width: 80rch;
+}
+
+.firstSectionHeading {
+    margin-top: 0;
 }
 
 aside {
