@@ -1,24 +1,20 @@
-/*!!!!!*/
-/*add in your own font imports here*/
-/*remember to update them in the rest of the CSS : eg the body selector*/
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/*!!!!!*/
+
+
 /*change out, and/or add colours to the colour scheme*/
 :root{
-    /* basic 2-bit palette from 1bit Monitor Glow Palette by Polyducks */
-    /* https://lospec.com/palette-list/1bit-monitor-glow */
     --colour-1: #101820;
-    --colour-2: #8a8afb;
+    --colour-2 :#8a8afb;
 }
 
+
 /* this swaps the colour order to account for user's OS dark mode */
-/*!!!!!*/
-/*remember to update the colours here too to reflect the above changes*/
 @media (prefers-color-scheme: dark) {
     :root{
-        --colour-1: #f0f6f0;
-        --colour-2: #222323;
+        --colour-1: #8a8afb;
+        --colour-2: #101820
+        ;
     }
 }
 
@@ -26,7 +22,7 @@
 body {
     background-color: var(--colour-2);
     color: var(--colour-1);
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.5;
     padding: 1rem;
     display: flex;
@@ -37,13 +33,17 @@ body {
 header {
     display: flex;
     justify-content: center;
-    margin-block-end: 3rem;
+    margin-block-end: 1rem;
+}
+
+header h1 {
+    font-size: 50px;
 }
 
 .mainNavContainer {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1rem;
 }
 
@@ -76,9 +76,22 @@ aside {
 
 footer {
     display: flex;
-    justify-content: center;
-    margin-block-start: 3rem;
+    flex-direction: column;
+    align-items: center; /* replaces justify-content: center for centering in a column */
+    margin-block-start: -30px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*technique from Kevin Powell*/
 /*https://youtu.be/CU8Plk-53RU?si=zMpP0Pfbg1SaXeDB&t=255*/
