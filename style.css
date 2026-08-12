@@ -73,10 +73,7 @@ aside {
     visibility: hidden;
     flex: 1;
 }
-section id="framing-section" figcaption{
-    display: flex;
-    justify-content: center;
-}
+
 
 footer {
     display: flex;
