@@ -15,36 +15,37 @@
 </head>
 
 <body>
+    <!--HEADING FOR WEBSITE-->
     <header>
-        <h1>System Design Document</h1>
+        <h1>SYSTEM DESIGN DOCUMENT</h1>
     </header>
 
+<!--NAVIGATION BAR-->
 <div class="mainNavContainer">
-
     <nav>
-        <a href="./index.html">Home Page</a>
-        <a href="">Assignment 2</a>
+        <a href="./index.html">HOME PAGE</a>
+        <a href="">ASSIGNMENT 2</a>
     </nav>
 
+    <!--MAIN CONTENT-->
     <main>
 
         <section id="scenario-section">
 
-            <h3 class = "firstSectionHeading">Scenario: Musical Toy for Toddlers</h3>
+            <h3 class = "firstSectionHeading">SCENARIO</h3> 
+            <p>A musical toy designed for toddlers to explore music in a fun and engaging way</p>
 
-            <h4>Prompt:</h4>
 
+            <h4>PROMPT</h4>
             <p>Design a way for toddlers to play music, and feel excited about their creations</p>
 
-            <h4>Context:</h4>
-
+            <h4>CONTEXT</h4>
             <p>
                 Browser based musical instruments offer users the ability to dynamically perform music and explore complex audio design. 
                 While these interactions allow for a depth of control, they can be intimidating for many adult users, let alone you children whose language skills are still developing.
             </p>
 
-            <h4>Discussion:</h4>
-
+            <h4>DISCUSSION</h4>
             <p>
                 Based on my understanding of the brief, I can identify a few notable details related to how it
                 sets up this project's purpose and worth. At the core, like most (if not all) instruments, is the goal
@@ -74,19 +75,15 @@
                 culture.
             </p>
 
-        </section>
 
-        <section>
-
-            <h4>Synopsis</h4>
-
+            <h4>SYNOPSIS</h4>
             <p>
                 I will design an instrument focused on performing accompaniments to a collection of popular songs. This
                 will include "play along" visual feedback for the song's instrumental parts as well as its lyrics,
                 with optional levels of auto-accompaniment.
             </p>
 
-            <h4>Response to Purpose and Worth</h4>
+            <h4>RESPONSE TO PURPOSE AND WORTH</h4>
 
             <p>
                 This responds to the purpose of allowing for performance to be a social act. By allowing for the visual
@@ -103,25 +100,23 @@
 
         </section>
 
-        <section>
-            <h3>Framing</h3>
+        <section id="framing-section">
+            <h3>FRAMING</h3>
             <p>
-                A key conceptual influence on this project is Karaoke - and what if it could be applied to the
-                vocals and accompaniment. It's important to note that someone who is currently 70 years old would
-                have been a teenager in the 1970s where the technology of music playback allowed for Karaoke and
-                "sing alongs" to develop in this particular form. While Karaoke machines (and jukeboxes) have their
-                own interesting aesthetic lineage, I would perhaps instead draw more specifically on the characterisation
-                of something like Hammond's 1970 electric organ designs, with wood panelling and colourful toggles.
+                A key conceptual influence on this project is the Meowsic cat piano — 
+                and what if its logic of translating an everyday, unintimidating shape into an instrument could be applied more broadly. It's worth noting that a
+                toddler's frame of reference for "musical instrument" is shaped less by any technical understanding of sound and more by early, playful associations — an animal, 
+                a colour, a shape they already recognise. While the Meowsic has its own specific character as a licensed toy product, I would draw more on the underlying design logic than 
+                the object itself: a whimsical shape rendered in bright, contrasting colours, paired with big, clearly differentiated keys designed for small, imprecise hands. 
+                This suggests an approach where the instrument's form doesn't read as a scaled-down version of an adult instrument, but as something built from the ground up around a toddler's own visual and tactile vocabulary — 
+                favouring a single friendly silhouette and oversized, 
+                high-contrast keys over the layered rows of controls found in more conventional keyboard designs.
             </p>
             <figure>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Hammond_Aurora_Classic.jpg" alt="Hammond Aurora Electronic Organ">
+                <img src="./assets/images/meowwsic.png" alt="Meowsic">
                 <figcaption>
-                    <a href="https://commons.wikimedia.org/wiki/File:Hammond_Aurora_Classic.jpg">
-                        Hammond Aurora Classic
-                    </a>
-                    by Goolit. Licensed under the
-                    <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">
-                        Creative Commons Attribution-Share Alike 4.0 International licence.
+                    <a href="https://btoys.com.au/products/meowsic-bx1025z?srsltid=AfmBOortl1FElOvwbuFwqGjgOmaEwuSm5zRIcyIBvrsB2xq7pc2jsl23">
+                        Meowsic Interactive Cat Piano
                     </a>
                 </figcaption>
             </figure>
@@ -130,56 +125,127 @@
 
 
         <section>
-            <h3>Interaction design analysis</h3>
+            <h3>INTERACTION DESIGN ANALYSIS</h3>
+
             <h4>
-                Example 1:
-                <a href="https://virtualpiano.net/?song-post-32683" target="_blank">Virtual Piano</a>
+                EXAMPLE 1:
+                <a href="https://bellicapelli.itch.io/ots-01" target="_blank">Virtual Synth</a>
             </h4>
             <p>
-                I chose this example to its discuss information design, in particular the way it handles
-                searching for a song. There is lots I don't like about other aspects of the info design, but
-                this is the most relevant for my project. When arriving at the keyboard users can select a
-                piece of sheet music to play, not too dissimilar to my Karaoke concept. They do so by using
-                the search box (pictured below).
+                This example was chosen to discuss information design, in particular the way it presents a single, contained instrument interface that houses all its complexity within one object. 
+                Users arrive at the OTS-01 to find a self-contained toy synth, styled like a physical hardware unit with an onscreen keyboard and a body of dials, sliders, and drawable waveforms all visible at once — 
+                not unlike the layout ambitions of this project. Its core interaction lets users draw and edit sound waves directly and hear the result immediately, paired with an onscreen keyboard and preset waves to get started quickly. 
+                This single-frame approach — where the instrument's shape, its controls, and its output are all visible and manipulable in one continuous surface — is close to what the project's information design aims to resemble: 
+                everything reachable without navigating away or opening secondary menus.
             </p>
 
             <figure>
-                <img src="./assets/images/virtualPiano_screenGrab1.PNG.jpg" alt="screen shot of the virtual piano UI">
+                <img src="./assets/images/exampleOne.png" alt="screen shot of the virtual Synth UI">
                 <figcaption>
-                    <a href="https://virtualpiano.net/">Virtual Piano</a>
+                    <a>Virtual Synth</a>
                 </figcaption>
             </figure>
 
             <p>
-                Clicking on the box doesn't provide any immediate suggesting for the kinds of music sheets I might
-                be able to search for, rather it just makes the box larger. As I start to type it gives me a few
-                preselected categories, before it loads in the prediction of the song I'm looking for. Selecting
-                anything from the categories takes me to a separate page, but selecting the prediction loads the
-                song straight into the UI. This represents a discord of information design, with different ways of
-                displaying information based on the kinds of action taken, rather than presenting all the information
-                within a single frame.
+                However, the specific density of controls is where this reference needs adapting rather than 
+                adopting outright. Beyond the visible layer, the unit can be "opened" to reveal further parameters — wave copy/paste, animation speed, colour customisation, 
+                pitch control, and more — and even at the surface level it includes high and low pass filters, reverb, delay, and chorus. For an adult or hobbyist audience this layered depth is a strength, 
+                rewarding exploration the way the brief describes as intimidating for children. For a toddler, this same density of mixer-style controls — filters, effects sends, waveform editing — 
+                would be unusable and likely overwhelming, so those elements won't be implemented. What carries forward instead is the underlying principle: a single toy-like object, with sound generation and playback contained in one visible surface, 
+                rather than the layout logic of dials and sliders themselves..
             </p>
-            <p>
-                Besides the issues with how the information is presented within the experience of interaction, there
-                is also the selection of songs that I might choose from, with a seemingly large but also shallow pool
-                of information. For example there's many different variations on the song "Mad World", but based on
-                the Imagine Dragons or Gary Jules covers, rather than the original, with no way of knowing which is
-                which until selecting the sheet.
-            </p>
-            <p>
-                Picking such an example is perhaps unfair, but it provides a valuable impact on what I want my
-                project's information design <em>not</em> to be like. Selecting the particular song to play should
-                be integrated within the singular instrument UI. Preferably this could be done through an initial
-                presentation of categories, along with a search function if needed, for people to explore rather than
-                needing to input something ahead of time. It would support this through a more curated choice of
-                included songs - seeking to represent a smaller set more relevant to its cultural context, and also
-                making it possible to explore more directly.
-            </p>
-            <h4>Example 2</h4>
-            <h4>Example 3</h4>
-            <h4>Example 4</h4>
-        </section>
+           
 
+            <h4>EXAMPLE 2:
+            <a href="https://www.gamesgames.com/game/princess-banquet-practical-joke" target="_blank">Online Kid Games</a>
+            </h4>
+            <p>
+                This example is chosen to discuss information design, in particular the way its UI reduces interaction down to a single, consistent input — 
+                mouse click or tap to select an item from a row of choices, repeated across each stage of the game (makeup, hair, outfit, shoes, jewellery). Play is controlled entirely through mouse click or tap. 
+                This single-gesture repetition is genuinely well suited to a toddler-aged user: there's no combination of buttons, no drag-and-drop precision required, and no reading needed to understand what to do next — each screen presents
+                 a limited set of visual options, and any one of them can be selected the same way. In that sense, the UI achieves real approachability through mechanical simplicity, even without simplifying the visual content around it.
+             </p>
+
+             <figure>
+                <img src="./assets/images/exampleTwo.png" alt="screen shot of the Kids Game UI">
+                <figcaption>
+                    <a>Online Princess Game</a>
+                </figcaption>
+            </figure>
+
+             <p>    
+                However, this is also where the page becomes a useful negative example rather than a positive one. 
+                The site the game sits within is structurally the opposite of contained: the surrounding page is dense with promotional tiles for dozens of unrelated games, autoplay thumbnails, ratings, play counts, and category tags, 
+                all competing for attention around the single game frame. Even the "similar games" and site-wide grids stack dozens of other dress-up, fashion, and princess titles directly around it, 
+                meaning a child's attention is never contained to the one interaction they're meant to be doing. This is the core problem this project's environment should avoid: 
+                it's not enough for the core interaction to be simple if it's embedded in a page that constantly pulls focus elsewhere. 
+                This reinforces the value of building a self-contained environment — no surrounding navigation, no adjacent content competing visually, no promotional tiles — so that the simplicity achieved at the level of the interaction 
+                (one gesture, one clear choice) is matched by simplicity at the level of the whole screen a child is looking at.
+             </p>
+
+
+
+             <h4>EXAMPLE 3:
+                <a href="https://mohayonao.github.io/cubic-sequencer/" target="_blank">Cube Sequencer</a>
+            </h4>
+            <p>This example is chosen to discuss information design, in particular the way it represents its underlying data. The interface uses an 8×8×8 
+                three-dimensional array as its sequence data container, treated as an 8×8 piano-roll matrix — rows representing pitch, columns representing time — across eight switchable scenes. 
+                This structure can be viewed from each of its three axes, with each viewpoint representing a different sound track: piano, pad, and beep. Control is handled through a panel of abbreviated labels — PLY for play on/off, 
+                RND to randomise parameters, CLR to clear them, BPM for tempo, and AXIS to switch between the piano, pad, and beep viewpoints, alongside per-track pitch-shift 
+                and loop-length settings. It's described by its own creator as a 3D matrix sequencer.
+            </p>
+
+            <figure>
+                <img src="./assets/images/exampleThree.png" alt="screen shot of the Cube Sequencer UI">
+                <figcaption>
+                    <a>Cube Sequencer</a>
+                </figcaption>
+            </figure>
+
+            <p>This is a useful negative example precisely because it sits at the opposite end of the spectrum from where this project needs to be. 
+                Understanding the interface requires holding a conceptual model of a rotating cube as a data structure, reading a row of abbreviated 
+                English labels to know what each control does, and actively switching "axis" to even see the other two tracks — nothing about the current state is
+                 legible at a glance without that prior knowledge. Where the toy synth reference offered a single continuous surface, and the dress-up game 
+                 offered one repeatable gesture, this reference shows what happens when depth and flexibility are prioritised over legibility: powerful for
+                  a musician comfortable navigating abstract, text-labelled controls, but entirely inaccessible to a toddler who can't yet read, let alone
+                   hold a spatial model of a cube standing in for musical time and pitch. It reinforces, by contrast, the value of keeping any underlying structure
+                   invisible — a toddler should never need to know there's a "matrix" or an "axis" behind what they're pressing.
+            </p>
+
+            <h4>EXAMPLE 4:
+                <a href="https://mickyappz.com/" target="_blank">Mickyappz</a>
+            </h4>
+            <p>
+                This example is chosen to analyse both what works and what doesn't for a toddler-focused instrument. At the level of the core interaction, 
+                Musical Instrument Toys gets close to the mark: the interface requires no reading and relies on easy touch controls, letting kids explore
+                 and play independently, with large, colourful piano keys supporting multi-touch and shaking toys that respond to a gesture rather than a 
+                 precise tap — lowering the motor-skill bar even further than a standard keyboard. The instruments also use original, authentic sounds rather
+                  than synthesised approximations, which supports the familiarity value raised earlier — a xylophone that sounds like a xylophone gives a 
+                  toddler's first interaction something recognisable to latch onto, rather than requiring new learning.
+            </p>
+            <p> 
+                Where the app runs into trouble is in how that accessibility is packaged. It bundles four distinct instrument types — piano, xylophone, 
+                drums, and shaking toys — into one product, which likely means moving between separate instrument screens rather than encountering one 
+                continuous, self-contained surface — reintroducing a version of the "discord of information design" flagged in the virtualpiano.net analysis, 
+                where different modes present information in inconsistent ways rather than as one legible object. There's a related tension with the 
+                maturity/characterful-object angle raised by the Meowsic reference: leaning on authentic, real-instrument sounds and clean, neat graphics 
+                favours realism over the whimsical, single-silhouette approach that made Meowsic distinctive, so the app reads more as a faithful miniature 
+                of several real instruments than as something with its own identity. Finally, as a free app in this category, it likely carries the same 
+                monetisation risk flagged in the gamesgames and comparable-apps analysis — ad content sitting on or near the play screen that a child can
+                trigger by accident, pulling focus away from the instrument itself. The product page doesn't confirm this directly for this specific app, 
+                but it's a real risk worth naming for any free, ad-supported toddler app in this category, and it reinforces why this project's environment 
+                should be built ad-free and fully self-contained from the outset — accessibility at the level of a single interaction means little if the 
+                surrounding product keeps pulling attention away from it.
+            </p>
+
+            <figure>
+                <img src="./assets/images/exampleFour.png" alt="screen shot of the App website">
+                <figcaption>
+                    <a>Mickyappz</a>
+                </figcaption>
+            </figure>
+
+        </section>
     </main>
 
     <aside></aside>
@@ -188,7 +254,7 @@
 
 <footer>
     <p>Github Pages maintained by:
-        <a href="https://github.com/p-mcmahon-rmit/" target="_blank">
+        <a href="https://github.com/emilylyy1" target="_blank">
             Emily Ly
         </a>
     </p>
