@@ -1,19 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-
-/*change out, and/or add colours to the colour scheme*/
-:root{
+/* change out, and/or add colours to the colour scheme */
+:root {
     --colour-1: #00804C;
-    --colour-2 :#ffffff;
+    --colour-2: #ffffff;
+    --colour-3: #e8f5ef;
 }
 
 
 /* this swaps the colour order to account for user's OS dark mode */
 @media (prefers-color-scheme: dark) {
-    :root{
+    :root {
         --colour-1: #93dd71;
         --colour-2: #001F3F;
+        --colour-3: #123b4d;
     }
 }
 
@@ -29,16 +30,19 @@ body {
     gap: 1rem;
 }
 
+
 header {
     display: flex;
     justify-content: center;
     margin-block-end: 1rem;
 }
 
+
 header h1 {
     font-size: 45px;
     font-weight: 1000;
 }
+
 
 .mainNavContainer {
     flex: 1;
@@ -46,6 +50,7 @@ header h1 {
     justify-content: flex-start;
     gap: 5rem;
 }
+
 
 nav {
     display: flex;
@@ -55,29 +60,108 @@ nav {
     align-items: flex-end;
 }
 
+
+nav a {
+    color: var(--colour-1);
+    text-decoration: none;
+}
+
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+
 section {
     max-width: 80rch;
+    background-color: var(--colour-3);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
 }
+
 
 .firstSectionHeading {
     margin-top: 0;
 }
 
-h3, h4{
-    font-weight: 1000;  
+
+h3, h4 {
+    font-weight: 1000;
     font-size: 25px;
     margin-bottom: 0;
 }
 
-p{
+
+p {
     margin-top: 0;
     text-align: justify;
+}
+
+
+/* prototype buttons */
+
+.prototype-link a,
+.testing a {
+    background-color: var(--colour-1);
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+.prototype-link a:hover,
+.testing a:hover {
+    opacity: 0.8;
+}
+
+
+/* prototype sections */
+
+.prototype {
+    border-left: 4px solid var(--colour-1);
+}
+
+
+/* table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+
+th {
+    background-color: var(--colour-3);
+}
+
+
+/* git commits */
+
+.commits {
+    background-color: var(--colour-3);
+    padding: 10px;
+}
+
+
+/* user testing */
+
+.testing {
+    text-align: center;
 }
 
 
@@ -95,54 +179,53 @@ footer {
 }
 
 
+/* technique from Kevin Powell */
+/* https://youtu.be/CU8Plk-53RU?si=zMpP0Pfbg1SaXeDB&t=255 */
+/* longer post about how this works and the * + * selector */
+/* https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/ */
 
-
-
-
-
-
-
-
-
-
-
-/*technique from Kevin Powell*/
-/*https://youtu.be/CU8Plk-53RU?si=zMpP0Pfbg1SaXeDB&t=255*/
-/*longer post about how this works and the * + * selector*/
-/*https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/*/
 .prose > * + * {
     margin-block-start: var(--prose-flow, 1em);
 }
 
-/* breakpoints from Material Design Spec https://m3.material.io/foundations/layout/breakpoints/overview */
-/* while sometimes mobile first is recommended, as we will be focused on desktop, we will start there */
 
-/* assumed base sizing is large (1200–1599px) : desktop  */
+/* breakpoints from Material Design Spec */
+/* https://m3.material.io/foundations/layout/breakpoints/overview */
+
 
 /* extra-large breakpoint : desktop, ultrawide monitors */
 @media (width > 1600px) {
 
 }
 
+
 /* expanded breakpoint : phone or tablet in landscape, desktop */
 @media (width < 1200px) {
+
     header {
         margin-block-end: 2rem;
     }
+
     footer {
         margin-block-start: 2rem;
     }
+
 }
+
+
 /* medium breakpoint : tablet in portrait */
 @media (width < 840px) {
+
     header {
         margin-block-end: 1rem;
     }
+
     .mainNavContainer {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
     }
+
     nav {
         flex: 0;
         width: 100%;
@@ -150,17 +233,35 @@ footer {
         justify-content: space-between;
         flex-direction: row;
     }
+
     main {
         flex: 1;
     }
+
     aside {
         flex: 0;
     }
+
+    .prototype-link {
+        margin-top: 10px;
+    }
+
     footer {
         margin-block-start: 1rem;
     }
+
 }
+
+
 /* compact breakpoint : phone in portrait */
 @media (width < 600px) {
+
+    header h1 {
+        font-size: 35px;
+    }
+
+    section {
+        padding: 10px;
+    }
 
 }
