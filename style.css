@@ -178,6 +178,26 @@ footer {
     margin-block-start: -30px;
 }
 
+#intro-section {
+    background-color: var(--colour-3);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#intro-section h2 {
+    font-size: 30px;
+    margin-top: 0;
+}
+
+#intro-section p {
+    text-align: center;
+}
+
+footer a {
+    color: var(--colour-1);
+}
+
 
 /* technique from Kevin Powell */
 /* https://youtu.be/CU8Plk-53RU?si=zMpP0Pfbg1SaXeDB&t=255 */
