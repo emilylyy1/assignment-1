@@ -1,16 +1,56 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Assignment 3 Documentation — Little Keys</title>
+
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Testing screenshot styling */
+        .test-screenshot {
+            max-width: 560px;
+            margin: 24px auto;
+            padding: 16px;
+            background: #fff8ff;
+            border: 1px solid #eadcf8;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .test-screenshot img {
+            display: block;
+            width: 100%;
+            max-width: 393px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        .test-screenshot figcaption {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #51436a;
+        }
+
+        #testing h3 {
+            margin-top: 24px;
+        }
+
+        #testing h3:first-of-type {
+            margin-top: 16px;
+        }
+    </style>
 </head>
 
 <body>
     <header class="site-header">
         <h1>Assignment 3 - Little Keys</h1>
-
     </header>
 
     <nav class="site-nav" aria-label="Main navigation">
@@ -21,90 +61,194 @@
         <a href="instrument.html">Play instrument</a>
     </nav>
 
-<main>
-    <section class="panel">
-        <h2>Project synopsis</h2>
-        <p>Little Keys is a browser-based audio instrument designed as a musical toy for toddlers to explore sound in a fun and engaging way. It features a colourful keyboard with large, 
-            easy-to-press keys, each producing a distinct musical tone when activated. Playful animations and immediate audio-visual feedback help children connect their actions with the sounds they create. 
-            The simple interface encourages curiosity, experimentation and creative expression without requiring musical knowledge or reading skills. By combining accessible interactions with a bright, 
-            playful design, Little Keys aims to make musical exploration intuitive, enjoyable and rewarding for young children.</p>
-    </section>
-    
-    <section class="panel">
-        <h2>How the final project responds</h2>
-        <ul>
-            <li>Eight large, colourful keys create an approachable keyboard layout.</li>
-            <li>Each key plays a different pitch using the browser's Web Audio API.</li>
-            <li>Pressed keys animate to provide immediate visual feedback.</li>
-            <li>Children can click or tap keys, or use A, S, D, F, G, H, J and K on a physical keyboard.</li>
-            <li>A sound toggle and surprise button provide simple optional controls.</li>
-            <li>The interface keeps the instrument on one screen and avoids menus or technical audio controls.</li>
-        </ul>
-    </section>
-
-    <section class="panel">
-        <h2>Core interactive features</h2>
-        <h3>1. Play a note</h3>
-        <p>Each key has a note value. A click event calls the play function, which creates an oscillator and gain node. The oscillator frequency changes for each key. The gain node fades the sound in and out so notes stop smoothly.</p>
-        <h3>2. Keyboard input</h3>
-        <p>A keydown event checks whether the user pressed one of the mapped letters. Repeated keydown events are ignored to avoid unwanted repeated sounds when a key is held down.</p>
-        <h3>3. Visual feedback</h3>
-        <p>The selected key receives a temporary playing class. CSS changes its position and shadow to show that it has been pressed. A live status message also describes the last note played.</p>
-        <h3>4. Extended technique — Web Audio synthesis</h3>
-        <p>The extended technique is generating sound directly in the browser with the Web Audio API instead of loading separate sound files. The oscillator creates a simple tone, its frequency sets the pitch, and the gain node controls its volume envelope. Audio begins after a user interaction to comply with browser autoplay restrictions.</p>
-        <h3>5. Sound toggle and surprise</h3>
-        <p>The sound toggle lets users silence the instrument while keeping the visual interaction. The surprise button selects a random key and plays it, inviting exploration.</p>
-    </section>
-
-    <section class="panel">
-        <h2>Responsive and adaptive design system</h2>
-        <h3>Layout</h3>
-        <p>CSS Grid arranges eight keys in one row on wider displays and two rows of four keys on screens below 840px. The main instrument container uses a flexible maximum width so it remains centred on large displays.</p>
-        <h3>Breakpoints</h3>
-        <ul>
-            <li><strong>Medium:</strong> below 840px — four keys per row, reduced padding and smaller keys.</li>
-            <li><strong>Expanded:</strong> 840–1199px — eight keys in one row, fluid key sizing.</li>
-            <li><strong>Large:</strong> 1200–1600px — wider instrument and larger touch targets.</li>
-            <li><strong>Extra-large:</strong> above 1600px — the instrument expands within a maximum width and keys grow.</li>
-        </ul>
-        <h3>Typography and colour</h3>
-        <p>Rounded Nunito typography and a pastel colour palette make the instrument feel friendly. Each key has its own colour and a simple symbol. Note names and keyboard-letter hints provide optional guidance without making text the main interaction cue.</p>
-        <h3>Accessibility and feedback</h3>
-        <p>Keys are real HTML buttons with accessible labels. Visible focus outlines support keyboard navigation, and a live status region announces play feedback. The interface uses large clickable areas, avoids colour as the only indicator by including symbols and labels, and respects the reduced-motion preference. Sound starts after a user gesture rather than automatically.</p>
-        <h3>Browser testing</h3>
-        <p>Before submission, test the published project in both Chrome and Firefox at widths below 840px, between 840 and 1199px, from 1200 to 1600px, and above 1600px. Check that audio starts after a click, all eight keyboard shortcuts work, the sound toggle functions, and the layout does not overflow. Record only tests you have actually completed.</p>
-    </section>
-
-    <section class="panel" id="commits">
-            <h2>Commit Logs</h2>
-            <a href="commit-logs.csv" target="_blank">View Git Commit Logs (CSV)</a>
+    <main>
+        <section class="panel">
+            <h2>Project synopsis</h2>
+            <p>
+                Little Keys is a browser-based audio instrument designed as a musical
+                toy for toddlers to explore sound in a fun and engaging way. It features
+                a colourful keyboard with large, easy-to-press keys, each producing a
+                distinct musical tone when activated. Playful animations and immediate
+                audio-visual feedback help children connect their actions with the sounds
+                they create. The simple interface encourages curiosity, experimentation
+                and creative expression without requiring musical knowledge or reading
+                skills. By combining accessible interactions with a bright, playful
+                design, Little Keys aims to make musical exploration intuitive, enjoyable
+                and rewarding for young children.
+            </p>
         </section>
 
-    <section class="panel">
-        <h2>AI acknowledgement</h2>
-        <p>AI tools were used to help organise the project structure, draft documentation, and troubleshoot HTML, CSS and JavaScript. I reviewed and adapted the output to fit my design scenario and project goals. I tested and edited the final implementation as part of my own work.</p>
-        <p>Use this as a starting point and update it to accurately reflect how you used AI. Add the required acknowledgement as a comment on your Canvas submission, following the RMIT instructions.</p>
-    </section>
+        <section class="panel">
+            <h2>How the final project responds</h2>
+            <ul>
+                <li>Eight large, colourful keys create an approachable keyboard layout.</li>
+                <li>Each key plays a different pitch using the browser's Web Audio API.</li>
+                <li>Pressed keys animate to provide immediate visual feedback.</li>
+                <li>Children can click or tap keys, or use A, S, D, F, G, H, J and K on a physical keyboard.</li>
+                <li>A sound toggle and surprise button provide simple optional controls.</li>
+                <li>The interface keeps the instrument on one screen and avoids menus or technical audio controls.</li>
+            </ul>
+        </section>
 
+        <section class="panel">
+            <h2>Core interactive features</h2>
 
-</main>
+            <h3>1. Play a note</h3>
+            <p>
+                Each key has a note value. A click event calls the play function,
+                which creates an oscillator and gain node. The oscillator frequency
+                changes for each key. The gain node fades the sound in and out so
+                notes stop smoothly.
+            </p>
 
-<footer>
-    <p>
-        Maintained by
-        <a href="https://github.com/emilylyy1" target="_blank" rel="noreferrer">
-            Emily Ly
-        </a>
-        ·
-        <a href="https://github.com/emilylyy1" target="_blank" rel="noreferrer">
-            GitHub profile
-        </a>
-    </p>
-</footer>
+            <h3>2. Keyboard input</h3>
+            <p>
+                A keydown event checks whether the user pressed one of the mapped
+                letters. Repeated keydown events are ignored to avoid unwanted
+                repeated sounds when a key is held down.
+            </p>
 
+            <h3>3. Visual feedback</h3>
+            <p>
+                The selected key receives a temporary playing class. CSS changes
+                its position and shadow to show that it has been pressed. A live
+                status message also describes the last note played.
+            </p>
+
+            <h3>4. Extended technique — Web Audio synthesis</h3>
+            <p>
+                The extended technique is generating sound directly in the browser
+                with the Web Audio API instead of loading separate sound files.
+                The oscillator creates a simple tone, its frequency sets the pitch,
+                and the gain node controls its volume envelope. Audio begins after
+                a user interaction to comply with browser autoplay restrictions.
+            </p>
+
+            <h3>5. Sound toggle and surprise</h3>
+            <p>
+                The sound toggle lets users silence the instrument while keeping
+                the visual interaction. The surprise button selects a random key
+                and plays it, inviting exploration.
+            </p>
+        </section>
+
+        <section class="panel">
+            <h2>Responsive and adaptive design system</h2>
+
+            <h3>Layout</h3>
+            <p>
+                CSS Grid arranges eight keys in one row on wider displays and two
+                rows of four keys on screens below 840px. The main instrument
+                container uses a flexible maximum width so it remains centred
+                on large displays.
+            </p>
+
+            <h3>Breakpoints</h3>
+            <ul>
+                <li><strong>Medium:</strong> below 840px — four keys per row, reduced padding and smaller keys.</li>
+                <li><strong>Expanded:</strong> 840–1199px — eight keys in one row, fluid key sizing.</li>
+                <li><strong>Large:</strong> 1200–1600px — wider instrument and larger touch targets.</li>
+                <li><strong>Extra-large:</strong> above 1600px — the instrument expands within a maximum width and keys grow.</li>
+            </ul>
+
+            <h3>Typography and colour</h3>
+            <p>
+                Rounded Nunito typography and a pastel colour palette make the
+                instrument feel friendly. Each key has its own colour and a simple
+                symbol. Note names and keyboard-letter hints provide optional
+                guidance without making text the main interaction cue.
+            </p>
+
+            <h3>Accessibility and feedback</h3>
+            <p>
+                Keys are real HTML buttons with accessible labels. Visible focus
+                outlines support keyboard navigation, and a live status region
+                announces play feedback. The interface uses large clickable areas,
+                avoids colour as the only indicator by including symbols and labels,
+                and respects the reduced-motion preference. Sound starts after
+                a user gesture rather than automatically.
+            </p>
+        </section>
+
+        <section class="panel" id="testing">
+            <h2>Testing Results</h2>
+
+            <h3>Interaction Testing</h3>
+            <p>
+                The eight musical keys were tested and produced sound when activated.
+                The Sound On/Off control and Surprise Me button were also tested.
+                The keyboard controls A, S, D, F, G, H, J and K were tested.
+            </p>
+
+            <h3>Responsive Testing</h3>
+            <p>
+                The layout was checked at widths of approximately 390px, 768px,
+                1024px and 1440px. The keys rearranged appropriately at each
+                tested screen size.
+            </p>
+
+            <figure class="test-screenshot">
+                <img
+                    src="responsive-test-mobile.png"
+                    alt="Little Keys displayed in Chrome DevTools mobile device emulation at approximately 393 pixels wide."
+                    loading="lazy"
+                >
+                <figcaption>
+                    Figure 1. Little Keys displayed at a mobile viewport width
+                    of approximately 393px in Chrome DevTools.
+                </figcaption>
+            </figure>
+
+            <h3>Browser Testing</h3>
+            <p>
+                The instrument was tested in Google Chrome. Mozilla Firefox
+                testing has not yet been completed.
+            </p>
+
+            <h3>Testing Summary</h3>
+            <p>
+                The main instrument interactions and responsive layout worked
+                during testing. Further cross-browser testing is still required.
+            </p>
+        </section>
+
+        <section class="panel" id="commits">
+            <h2>Commit Logs</h2>
+            <p>
+                View the actual Git commit history for this project:
+                <a href="commit-logs.csv" target="_blank" rel="noreferrer">
+                    View Git Commit Logs (CSV)
+                </a>
+            </p>
+        </section>
+
+        <section class="panel">
+            <h2>AI acknowledgement</h2>
+            <p>
+                AI tools were used to help organise the project structure, draft
+                documentation, and troubleshoot HTML, CSS and JavaScript. I reviewed
+                and adapted the output to fit my design scenario and project goals.
+                I tested and edited the final implementation as part of my own work.
+            </p>
+            <p>
+                This statement should accurately reflect how AI was used in the
+                project. The required acknowledgement must also be added as a comment
+                on the Canvas submission, following the RMIT instructions.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Maintained by
+            <a href="https://github.com/emilylyy1" target="_blank" rel="noreferrer">
+                Emily Ly
+            </a>
+            ·
+            <a href="https://github.com/emilylyy1" target="_blank" rel="noreferrer">
+                GitHub profile
+            </a>
+        </p>
+    </footer>
 </body>
 </html>
-
-</body>
-
-</html
