@@ -70,7 +70,7 @@ document.addEventListener("keydown", (event) => {
 soundToggle.addEventListener("click", () => {
   soundOn = !soundOn;
   soundToggle.textContent = soundOn ? "♫ Sound: on" : "♫ Sound: off";
-  soundToggle.setAttribute("aria-pressed", String(!soundOn));
+  soundToggle.setAttribute("aria-pressed", String(soundOn));
   statusText.textContent = soundOn ? "Sound is on. Choose a colour to play!" : "Sound is off. You can still explore the keys.";
 });
 
