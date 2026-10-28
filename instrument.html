@@ -1,48 +1,39 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#f7efff">
-
-        <title>Little Keys — A Musical Playground</title>
-
-        <link rel="stylesheet" href="reset.css">
-        
-        <link rel="stylesheet" href="instrument.css">
-        <script src="instrument.js" defer></script>
-    </head>
-    
-    <body class="instrument-page">
-        <header class="instrument-header">
-        <a class="back-link" href="index.html">← Work index</a>
-        <p class="eyebrow">A LITTLE PLACE TO MAKE MUSIC</p>
-
-        <h1>Little Keys <span aria-hidden="true">✦</span></h1>
-        <p>Tap a key. Make a sound. Try another!</p>
-        </header>
-
-    <main class="play-area">
-    <section class="toy-card" aria-labelledby="play-title">
-        <div class="toy-top"><span class="star" aria-hidden="true">✦</span><div><h2 id="play-title">My little piano</h2><p id="status" aria-live="polite">Choose any colour to start playing.</p></div><span class="star" aria-hidden="true">♫</span></div>
-            <div class="keyboard" role="group" aria-label="Musical keyboard">
-                <button class="key key-1" data-note="0" data-letter="A" aria-label="Play Do, keyboard key A"><span class="key-shape" aria-hidden="true">●</span><span class="note-name">Do</span><span class="key-letter">A</span></button>
-                <button class="key key-2" data-note="2" data-letter="S" aria-label="Play Re, keyboard key S"><span class="key-shape" aria-hidden="true">◆</span><span class="note-name">Re</span><span class="key-letter">S</span></button>
-                <button class="key key-3" data-note="4" data-letter="D" aria-label="Play Mi, keyboard key D"><span class="key-shape" aria-hidden="true">♥</span><span class="note-name">Mi</span><span class="key-letter">D</span></button>
-                <button class="key key-4" data-note="5" data-letter="F" aria-label="Play Fa, keyboard key F"><span class="key-shape" aria-hidden="true">✿</span><span class="note-name">Fa</span><span class="key-letter">F</span></button>
-                <button class="key key-5" data-note="7" data-letter="G" aria-label="Play Sol, keyboard key G"><span class="key-shape" aria-hidden="true">★</span><span class="note-name">Sol</span><span class="key-letter">G</span></button>
-                <button class="key key-6" data-note="9" data-letter="H" aria-label="Play La, keyboard key H"><span class="key-shape" aria-hidden="true">☁</span><span class="note-name">La</span><span class="key-letter">H</span></button>
-                <button class="key key-7" data-note="11" data-letter="J" aria-label="Play Ti, keyboard key J"><span class="key-shape" aria-hidden="true">☀</span><span class="note-name">Ti</span><span class="key-letter">J</span></button>
-                <button class="key key-8" data-note="12" data-letter="K" aria-label="Play high Do, keyboard key K"><span class="key-shape" aria-hidden="true">✧</span><span class="note-name">Do!</span><span class="key-letter">K</span></button>
-            </div>
-        
-            <div class="toy-bottom"><span aria-hidden="true">🌈</span><p>Try the keys on screen or press <strong>A S D F G H J K</strong></p><span aria-hidden="true">☁️</span></div>
-            <div class="controls"><button id="sound-toggle" class="small-button" type="button" aria-pressed="false">♫ Sound: on</button><button id="surprise-button" class="small-button" type="button">Surprise me ✨</button></div>
-    </section>
-
-    <p class="little-tip">Grown-up tip: if you cannot hear sound at first, tap a piano key once to start audio.</p>
-    </main>
-
-        <footer class="instrument-footer"><a href="assignment3.html">How it works & design system</a></footer>
-    </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7efff">
+<title>Little Keys — A Musical Playground</title>
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="instrument.css">
+<script src="instrument.js" defer></script>
+</head>
+<body class="instrument-page">
+<header class="instrument-header">
+  <a class="back-link" href="index.html">← Work index</a>
+  <p class="eyebrow">A LITTLE PLACE TO MAKE MUSIC</p>
+  <h1>Little Keys <span aria-hidden="true">✦</span></h1>
+  <p>Tap a key or move your mouse across the colours. Make a sound. Try another!</p>
+</header>
+<main class="play-area">
+  <section class="toy-card" aria-labelledby="play-title">
+    <div class="toy-top"><span class="star" aria-hidden="true">✦</span><div><h2 id="play-title">My little piano</h2><p id="status" aria-live="polite">Choose any colour to start playing.</p></div><span class="star" aria-hidden="true">♫</span></div>
+    <div class="keyboard" role="group" aria-label="Musical keyboard">
+      <button class="key key-1" data-note="0" data-letter="A" aria-label="Play Do, keyboard key A"><span class="key-shape" aria-hidden="true">●</span><span class="note-name">Do</span><span class="key-letter">A</span></button>
+      <button class="key key-2" data-note="2" data-letter="S" aria-label="Play Re, keyboard key S"><span class="key-shape" aria-hidden="true">◆</span><span class="note-name">Re</span><span class="key-letter">S</span></button>
+      <button class="key key-3" data-note="4" data-letter="D" aria-label="Play Mi, keyboard key D"><span class="key-shape" aria-hidden="true">♥</span><span class="note-name">Mi</span><span class="key-letter">D</span></button>
+      <button class="key key-4" data-note="5" data-letter="F" aria-label="Play Fa, keyboard key F"><span class="key-shape" aria-hidden="true">✿</span><span class="note-name">Fa</span><span class="key-letter">F</span></button>
+      <button class="key key-5" data-note="7" data-letter="G" aria-label="Play Sol, keyboard key G"><span class="key-shape" aria-hidden="true">★</span><span class="note-name">Sol</span><span class="key-letter">G</span></button>
+      <button class="key key-6" data-note="9" data-letter="H" aria-label="Play La, keyboard key H"><span class="key-shape" aria-hidden="true">☁</span><span class="note-name">La</span><span class="key-letter">H</span></button>
+      <button class="key key-7" data-note="11" data-letter="J" aria-label="Play Ti, keyboard key J"><span class="key-shape" aria-hidden="true">☀</span><span class="note-name">Ti</span><span class="key-letter">J</span></button>
+      <button class="key key-8" data-note="12" data-letter="K" aria-label="Play high Do, keyboard key K"><span class="key-shape" aria-hidden="true">✧</span><span class="note-name">Do!</span><span class="key-letter">K</span></button>
+    </div>
+    <div class="toy-bottom"><span aria-hidden="true">🌈</span><p>Click or tap a key, move your mouse across the keys, or press <strong>A S D F G H J K</strong></p><span aria-hidden="true">☁️</span></div>
+    <div class="controls"><button id="sound-toggle" class="small-button" type="button" aria-pressed="false">♫ Sound: on</button><button id="surprise-button" class="small-button" type="button">Surprise me ✨</button></div>
+  </section>
+  <p class="little-tip">Grown-up tip: if you cannot hear sound at first, tap a piano key once to start audio.</p>
+</main>
+<footer class="instrument-footer"><a href="assignment3.html">How it works & design system</a></footer>
+</body>
 </html>

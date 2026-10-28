@@ -62,75 +62,93 @@
         </section>
 
 
-    <section class="panel" id="assignment3">
-        <p class="eyebrow">ASSIGNMENT 3 · COMMUNITY OF PRACTICE DOCUMENTATION</p>
-            <h2>Project documentation</h2>
-            <h3>Core interactive features</h3>
-            <h4>1. Play a note</h4>
-            <p>Each key is an HTML button associated with a musical pitch. Clicking or tapping a key calls the play function, which generates a note and provides immediate visual feedback.</p>
+        <section class="panel" id="assignment3">
+                <section class="panel" id="assignment3">
+                    <h2>Project documentation</h2>
+                    <h3>Core interactive features</h3>
+                    <p>Little Keys is designed around one simple action: make a sound and see an immediate response. This keeps the instrument approachable for toddlers, who may not be able to read instructions or understand conventional music software.</p>
+                    <h4>1. Play a note by clicking or tapping</h4>
+                    <p>Each of the eight large keys is an HTML button linked to a musical pitch. Clicking or tapping a key plays its note. The keys are large and separated by visible gaps to make them easier to select on a touchscreen or with a mouse. This direct action-and-response pattern supports the scenario's focus on exploration and cause and effect.</p>
+                    <h4>2. Computer keyboard input</h4>
+                    <p>The A, S, D, F, G, H, J and K keys trigger the eight corresponding notes. This gives users another way to play and makes it possible to experiment with short sequences. The letter mapping is also shown on each piano key as a reminder. The instrument remains usable with the on-screen keys, so the physical keyboard is optional.</p>
+                    <h4>3. Audio and visual feedback</h4>
+                    <p>When a note is played, the key briefly moves down and changes its shadow to create a pressed effect. A live status message announces the note name, while the generated tone provides audio feedback. Combining sound, movement, colour and labels makes the result of an action easier to notice and helps connect the user's action with the outcome.</p>
+                    <h4>4. Extended technique — mouse movement</h4>
+                    <p>The extended technique lets the user play by moving the mouse across the piano keys, rather than needing to click each one. A JavaScript <code>mousemove</code> listener checks which key the pointer is over and plays that key when the pointer enters it. The script remembers the last key entered, so moving within the same key does not repeatedly trigger the same note. When the pointer leaves the keyboard, that remembered key resets. This encourages free-form exploration and lets users create a sequence by sweeping across the colours. Click, tap and A–K keyboard controls remain available as alternatives. Technical reference: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event" target="_blank" rel="noreferrer">MDN — mousemove event</a>.</p>
+                    <h4>5. Sound generation in the browser</h4>
+                    <p>Little Keys creates tones with the Web Audio API instead of loading prerecorded audio files. JavaScript creates an oscillator for the tone and a gain node to shape its volume. Each key's note value changes the oscillator frequency, while a short fade makes the sound start and finish more smoothly. The audio context is created after a user action to work with browser audio restrictions. Reference: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API" target="_blank" rel="noreferrer">MDN — Web Audio API</a>.</p>
+                    <h4>6. Sound toggle and surprise button</h4>
+                    <p>The sound toggle turns audio on or off while keeping the keys interactive; this is useful when a caregiver needs to silence the instrument. The “Surprise me” button randomly selects one of the eight keys and plays it, giving users a low-pressure way to discover different notes. It uses JavaScript's <code>Math.random()</code> method. References: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random" target="_blank" rel="noreferrer">MDN — Math.random()</a>.</p>
+                    <h3>Design system and visual decisions</h3>
+                    <h4>Colour, shape and typography</h4>
+                    <p>The design uses a soft pastel palette of pink, peach, yellow, green, blue and purple. Each note has a distinct colour and a simple symbol, with the note name and computer-key label also visible. This means colour is not the only way to distinguish keys. Rounded corners, soft shadows and the Nunito typeface create a friendly, toy-like appearance that supports the toddler-focused scenario without adding complex decoration to the main interaction.</p>
+                    <h4>Layout and responsive behaviour</h4>
+                    <p>The keyboard uses CSS Grid so the keys remain aligned and evenly spaced. On wider screens, all eight keys sit in one row. Below 840px, the layout changes to four columns across two rows, giving each key more space on smaller devices. At widths of 1200px and above, the play area and keys can grow while remaining centred; above 1600px, a maximum width prevents the interface from stretching too far. A further breakpoint below 480px reduces key height and simplifies the instruction row. These rules are implemented in <a href="instrument.css">instrument.css</a> using CSS media queries. Reference: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries" target="_blank" rel="noreferrer">MDN — using media queries</a>.</p>
+                    <h4>Accessibility and ease of use</h4>
+                    <p>The keys and controls use semantic HTML buttons, descriptive accessible labels and visible keyboard-focus outlines. Text and symbols accompany the key colours, and the live status region announces interaction feedback. The page does not play audio automatically when it loads. CSS also respects the user's reduced-motion preference by removing transitions. These decisions support a simple interface for children while helping adults and users with different access needs operate it.</p>
+                    <h3>Implementation and media references</h3>
+                    <p>These project files show how the interaction and design system are implemented:</p>
+                    <ul class="work-links">
+                        <li><a href="instrument.html">instrument.html — interface structure and key labels</a></li>
+                        <li><a href="instrument.js">instrument.js — note playback, mouse movement, keyboard controls and sound settings</a></li>
+                        <li><a href="instrument.css">instrument.css — colours, layout, responsive breakpoints and focus styles</a></li>
+                    </ul>
+                    <p>The links above point to the files included with this project. For the published documentation, replace or supplement them with direct links to these files in the final public GitHub repository if available.</p>
+                    <h3>Testing record</h3>
+                    <p>Before submission, test the published instrument in the browsers and screen sizes required for your project. Check clicking and tapping every key, moving the pointer across keys, A–K keyboard input, the sound toggle, the surprise button, focus visibility, the status message and horizontal overflow. Add the actual browsers, screen widths, results and any fixes below after testing. Do not describe a test as passed unless you have completed it.</p>
+                    <ul>
+                        <li><strong>Browser/device tested:</strong> Add your actual result.</li>
+                        <li><strong>Responsive widths tested:</strong> Add the actual widths and results.</li>
+                        <li><strong>Issues found and fixes:</strong> Add any issues you found and how you resolved them.</li>
+                    </ul>
+                    </section>
+                    </section>
 
-            <h4>2. Computer keyboard input</h4>
-            <p>The A, S, D, F, G, H, J and K keys trigger the corresponding notes. This provides an additional way to play while retaining the simple, single-action interaction.</p>
-  
-            <h4>3. Visual feedback</h4>
-            <p>When a key is played, a temporary animation changes its position and shadow. A status message also communicates which note was played, so the interaction has both audio and visual feedback.</p>
-            
-            <h4>4. Extended technique — browser-based sound synthesis</h4>
-            <p>The extended technique is the use of the Web Audio API to generate sound directly in the browser rather than loading prerecorded sound files. An oscillator generates the tone, 
-                its frequency determines the pitch, and a gain node controls volume and fades the sound smoothly. Audio starts after the user interacts with the page to respect browser autoplay restrictions.</p>
-            
-            <h4>5. Sound toggle and surprise button</h4>
-            <p>The sound toggle allows the user to silence the instrument while continuing to interact with the keys. The surprise button chooses and plays a random note, encouraging playful discovery.</p>
-  
-            <h3>Responsive and adaptive design system</h3>
-  
-            <h4>Layout and breakpoints</h4>
-  
-            <ul>
-                <li><strong>Medium — below 840px:</strong> the keys rearrange into two rows of four, with spacing adjusted for smaller screens.</li>
-                <li><strong>Expanded — 840px to 1199px:</strong> the keyboard uses a fluid layout and remains centred.</li>
-                <li><strong>Large — 1200px to 1600px:</strong> the instrument can use more available width while retaining clear, large keys.</li>
-                <li><strong>Extra-large — above 1600px:</strong> the instrument remains centred within a maximum width so it does not stretch excessively.</li>
-            </ul>
+        <section class="panel" id="commits">
+            <h2>Final version commit logs</h2>
+            <p><a href="commit-logs.csv" target="_blank">View Git Commit Logs (CSV)</a></p>
+            <p>Keep the commits that show the final interface, audio and keyboard interactions, responsive design, documentation and final fixes. Do not submit placeholder messages as if they were real history.</p>
+        </section>
 
-            <p>These breakpoint behaviours are implemented with CSS media queries. Test the actual published page at the required widths before submission and adjust the description if the implementation changes.</p>
-  
-            <h4>Typography, colour and information design</h4>
-            <p>Rounded Nunito typography and a pastel palette support a friendly, toy-like atmosphere. Each key uses its own colour and symbol to make choices easy to distinguish. The interface keeps the keyboard and essential controls together on one screen, avoiding extra menus and unnecessary information.</p>
-  
-            <h4>Accessibility and feedback</h4>
-            <p>The keys are semantic buttons with accessible labels and visible keyboard-focus styles. Large touch targets support imprecise tapping, symbols and labels mean colour is not the only cue, and reduced-motion preferences are considered. The live status message provides feedback about the last note played. Sound is not triggered automatically on page load.</p>
-  
-            <h4>Browser and responsive testing record</h4>
-            <p>Before submission, test the final published instrument in both Chrome and Firefox at widths below 840px, from 840–1199px, from 1200–1600px and above 1600px. Check every key, keyboard shortcuts, sound toggle, surprise button, focus visibility and horizontal overflow. Record only tests you have actually completed.</p>
+
+        <section class="panel" id="community">
+            <h2>Community of Practice and process documentation</h2>
+            <p><a class="button button-secondary" href="https://au.miro.com/app/board/u3jVOf5GMUk=/?share_link_id=361739306396" target="_blank" rel="noreferrer">Open Community of Practice board</a></p>
+        </section>
+
+        <section class="panel" id="previous-work">
+        <h2>Prior Assignments</h2>
+        <p>Explore earlier projects and design development.</p>
+
+            <h3><a href="assignment1.html">Assignment 1 — System Design Document</a></h3>
+            <p>Assignment 1 explored the design scenario of creating a musical toy that allows toddlers to explore music in a fun and engaging way. The project focused on understanding how a 
+                browser-based musical instrument could encourage curiosity and excitement without requiring musical knowledge or reading skills.</p>
+
+            <p>Research examined existing musical toys and digital instruments, including the Meowsic cat piano, virtual synthesizers and children's music games. Through this analysis, 
+                I explored how interface simplicity, colourful visuals, familiar shapes and immediate audio feedback could make musical interaction more accessible to young children.</p>
+
+            <p>The proposed design was a simplified keyboard featuring large, brightly coloured keys, each producing a different synthesiser sound when pressed. The overall aim was 
+                to create an intuitive, playful experience where toddlers could experiment with sounds independently and feel excited about their musical discoveries.</p>
+
+            <h3><a href="assignment2.html">Assignment 2 — Parallel Prototypes</a></h3>
+            <p>Assignment 2 focused on developing three parallel prototypes of a browser-based audio instrument to explore how different interface layouts influence user interaction. 
+                The project included a 3 × 3 grid of sound pads, a vertical layout with larger buttons, and a horizontal keyboard-style layout.</p>
+
+            <p>Each prototype allowed users to trigger sounds through simple button interactions, while the arrangement, size and organisation of the controls varied. This process 
+                helped me explore how interface design could affect usability, accessibility and the overall experience of playing a digital instrument.</p>
+            
+            <p>Through these experiments, I explored the importance of clear visual organisation, consistent interactions and immediate audio feedback. The horizontal keyboard-style 
+                prototype became a useful direction for further development, as its familiar layout provided a simple and intuitive way to interact with sounds. 
+                These explorations informed the development of Little Keys in Assignment 3, where the focus shifted towards creating an engaging musical toy specifically designed for toddlers.</p>
+        </section>
+
+    <section class="panel" id="ai-acknowledgement">
+    <h2>AI acknowledgement</h2>
+    <p>AI tools were used to help organise the project structure, draft documentation, and troubleshoot HTML, CSS and JavaScript. I reviewed and adapted the output to fit my design scenario and project goals. I will verify and test the final implementation as part of my own work.</p>
+    <p>Update this statement so it accurately reflects how you used AI. RMIT also requires the acknowledgement to be added as a comment on the Canvas assignment submission; including it on this page does not replace that requirement.</p>
     </section>
 
-<section class="panel" id="commits">
-  <h2>Final version commit logs</h2>
-  <p>The final submission needs the real Git commit history for your project. I have not invented commit IDs or claimed that example commits happened. Open your repository's <strong>Commits</strong> page or run <code>git log --oneline</code> in your local repository, then add the actual messages and IDs here.</p>
-  <p><strong>Repository:</strong> <a href="https://github.com/emilylyy1" target="_blank" rel="noreferrer">github.com/emilylyy1</a> — replace this with the direct URL to the repository containing the final instrument.</p>
-  <p>Keep the commits that show the final interface, audio and keyboard interactions, responsive design, documentation and final fixes. Do not submit placeholder messages as if they were real history.</p>
-</section>
-
-<section class="panel" id="community">
-  <h2>Community of Practice and process documentation</h2>
-  <p>Use the link below to access the process board previously used for project development. Make sure your Community of Practice documentation is updated with your final prototype, design decisions, implementation of the extended technique, testing and reflection.</p>
-  <p><a class="button button-secondary" href="https://au.miro.com/app/board/u3jVOf5GMUk=/?share_link_id=361739306396" target="_blank" rel="noreferrer">Open Community of Practice board</a></p>
-</section>
-
-<section class="panel" id="previous-work">
-  <h2>Other work</h2>
-  <p>Explore earlier projects and design development.</p>
-  <ul class="work-links"><li><a href="assignment1.html">Assignment 1 — System Design Document</a></li><li><a href="assignment2.html">Assignment 2 — Parallel Prototypes</a></li></ul>
-</section>
-
-<section class="panel" id="ai-acknowledgement">
-  <h2>AI acknowledgement</h2>
-  <p>AI tools were used to help organise the project structure, draft documentation, and troubleshoot HTML, CSS and JavaScript. I reviewed and adapted the output to fit my design scenario and project goals. I will verify and test the final implementation as part of my own work.</p>
-  <p>Update this statement so it accurately reflects how you used AI. RMIT also requires the acknowledgement to be added as a comment on the Canvas assignment submission; including it on this page does not replace that requirement.</p>
-</section>
-
-</main>
-<footer><p>Maintained by <a href="https://github.com/emilylyy1" target="_blank" rel="noreferrer">Emily Ly</a> · <a href="https://github.com/emilylyy1" target="_blank" rel="noreferrer">GitHub profile</a></p></footer>
+    </main>
+    <footer><p>Maintained by <a href="https://github.com/emilylyy1" target="_blank" rel="noreferrer">Emily Ly</a> · <a href="https://github.com/emilylyy1" target="_blank" rel="noreferrer">GitHub profile</a></p></footer>
 </body>
 </html>

@@ -3,6 +3,8 @@ const keys = document.querySelectorAll(".key");
 const statusText = document.querySelector("#status");
 const soundToggle = document.querySelector("#sound-toggle");
 const surpriseButton = document.querySelector("#surprise-button");
+const keyboard = document.querySelector(".keyboard");
+let hoveredKey = null;
 let audioContext;
 let soundOn = true;
 const baseFrequency = 261.63;
@@ -39,6 +41,20 @@ function playNote(note, keyButton) {
 
 keys.forEach((key) => {
   key.addEventListener("click", () => playNote(Number(key.dataset.note), key));
+});
+
+// Extended technique: moving the mouse across different keys plays each note.
+// Only play when entering a new key so the sound does not repeat for every mouse movement.
+keyboard.addEventListener("mousemove", (event) => {
+  const keyButton = event.target.closest(".key");
+  if (keyButton && keyButton !== hoveredKey) {
+    hoveredKey = keyButton;
+    playNote(Number(keyButton.dataset.note), keyButton);
+  }
+});
+
+keyboard.addEventListener("mouseleave", () => {
+  hoveredKey = null;
 });
 
 document.addEventListener("keydown", (event) => {
